@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benim Her Şeyim ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #240817, #641d3c, #a33d60);
+  color: white;
+  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 25px 15px;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 430px;
+  padding: 35px 25px;
+  text-align: center;
+  border: 1px solid #ffffff45;
+  border-radius: 25px;
+  background: #ffffff16;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px #0005;
+}
+
+.heart {
+  font-size: 55px;
+  animation: beat 1.2s infinite;
+}
+
+h1 {
+  font-size: 27px;
+  color: #ffd5e5;
+  margin-bottom: 25px;
+}
+
+.message {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #fff0f5;
+}
+
+button {
+  margin-top: 25px;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #ffd5e5;
+  color: #641d3c;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#surprise {
+  display: none;
+  margin-top: 20px;
+  color: #ffd5e5;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.floating {
+  position: fixed;
+  bottom: -30px;
+  color: #ffc4d9;
+  animation: float 7s linear infinite;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% { opacity: 0.8; }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="heart">❤️</div>
+
+  <h1>Benim Her Şeyim Meleğim</h1>
+
+  <div class="message">
+    Seni her şeyden çok seviyorum
+
+    <br><br>
+
+    Olan hicbirseyin birbirimize olan sevgimizin
+    önüne geçmesine izin vermeyelim nolur
+
+    <br><br>
+
+    Özür dilerim yaptığım her şey için
+    Söz veriyorum istersek her şeyi
+    düzeltebiliriz Bunun için elimden
+    gelenin fazlasını yapacağım
+
+    <br><br>
+
+    Sen benim her seyimsin güzelim
+    ❤️asa❤️yeat❤️
+  </div>
+
+  <button onclick="showSurprise()">
+    iyiki varsın birtanem benim -bunatıkla-❤️
+  </button>
+
+  <div id="surprise">
+   GÜZELİM BENİM SENİ COK SEVİYORUM YAVRUM HER ZERRENE ÖLÜRÜM ❤️
+  </div>
+</div>
+
+<script>
+function showSurprise() {
+  document.getElementById("surprise").style.display = "block";
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "floating";
+  heart.innerHTML = "♥";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 25) + "px";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
